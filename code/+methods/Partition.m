@@ -39,8 +39,8 @@ if n <= 2
         v = L1;
     elseif head >= L1
         v = [head, L1];
-    %else
-       % v = zeros(0, n, class(L1));
+    else
+        v = zeros(0, n, class(L1));
     end
 else % recursive call
     j = min(L1,head):-1:0;

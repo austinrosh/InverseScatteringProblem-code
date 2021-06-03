@@ -73,6 +73,10 @@ error_secondOrder = norm(v_secondOrder-v_original)/norm(v_original);
 err2 = error_secondOrder;
 error_thirdOrder = norm(v_thirdOrder-v_original)/norm(v_original);
 err3 = error_thirdOrder;
+display(err1)
+display(err2)
+display(err3)
+
 
 dim = FWD.dim;
 sample_csv1 = zeros(dim,dim);
