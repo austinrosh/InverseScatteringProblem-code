@@ -39,6 +39,6 @@ vft = vft.*Gf; %Fourier convolution theorem: FT of the convolution of two functi
 vft = ifftn(vft);
 vapplied = vft(1:n,1:n,1:n);
 
-%v2plot = squeeze(vapplied(round(n/2),:,:));
-v2plot = squeeze(vapplied(17,:,:));
+v2plot = squeeze(vapplied(round(n/2),:,:));
+%v2plot = squeeze(vapplied(17,:,:));
 pcolor(imag(v2plot))

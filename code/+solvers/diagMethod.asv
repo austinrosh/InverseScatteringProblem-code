@@ -23,8 +23,7 @@ function [v1,v2,v3] = diagMethod(filename,flag)
     v_original = FWD.V_vec;
     
     %% Born Series Recovery Terms
-     v_hadd = pinv(((A'*A).*(B*B').')); %diag method operator
-    phi1 = v_hadd*diag(A'*(A*v1_d*B)*B');
+    phi1 = v_hadd*diag(A'*(A*v1_d*B)*B'));
     phi1 = diag(phi1);
     phi2 = v_hadd*diag(A'*(A*v1_d*G*v1_d*B)*B');  
     phi2 = diag(phi2);

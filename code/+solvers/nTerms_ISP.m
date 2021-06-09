@@ -1,22 +1,17 @@
 function [v] = nTerms_ISP(filename, numTerms)
     assert(numTerms>=1, '<numTerms> must pass a non-empty array')
     load([filename,'.mat'])
-    
-    
     A = FWD.U_i;
     B = FWD.U_d;
     G = FWD.G;
     U_s = FWD.U_s;
     dim = FWD.dim;
     v_hadd = pinv(((A'*A).*(B*B').')); %diag method operator
-    
     v = zeros(dim^3, numTerms);
     v(:,1) = L1(U_s,A,B,v_hadd);
     v(:,2) = L2(v(:,1),v(:,1),A,B,G,v_hadd);
-    v(:,3) = L3(v(:,1),v(:,1),v(:,1),A,B,G,v_hadd);
-    
+    v(:,3) = L3(v(:,1),v(:,1),v(:,1),A,B,G,v_hadd);    
 end
-
 
 function [v1_] = L1(y1,A,B,v_hadd)
     v1_ = v_hadd*diag(A'*y1*B'); 

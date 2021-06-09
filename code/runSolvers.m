@@ -12,5 +12,5 @@ load forwardProblem.mat
 % flag = 0; %change to 1 to show plots in diagMethod() function
 % [v1, v2, v3] = solvers.diagMethod('forwardProblem',flag);
 
-[v1,v2,v3] = solvers.diagMethod('forwardProblem',1);
+[v1,v2,v3] = solvers.diagMethod('forwardProblem',0);
 
