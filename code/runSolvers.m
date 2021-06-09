@@ -9,19 +9,8 @@ close all
 addpath(genpath("/Users/austinrothschild/Desktop/Research/Levinson Research/Inverse Scattering/ISP-repo/InverseScatteringProblem-code/code"));
 load forwardProblem.mat
 %% Diag Method
-% clc
-% clear
-% close all
-% 
 % flag = 0; %change to 1 to show plots in diagMethod() function
 % [v1, v2, v3] = solvers.diagMethod('forwardProblem',flag);
-% 
-% %% Recursive Diag Method
-% clc
-% clear
-% close all
 
-numTerms = 1; %must be an integer greater than or equal to 1
-%sampled_fields = [FWD.U_s];
-[v] = solvers.diagMethod('forwardProblem',0)
+[v1,v2,v3] = solvers.diagMethod('forwardProblem',1);
 
