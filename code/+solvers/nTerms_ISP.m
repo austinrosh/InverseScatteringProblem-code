@@ -10,7 +10,7 @@ function [v] = nTerms_ISP(filename, numTerms)
     v = zeros(dim^3, numTerms);
     v(:,1) = L1(U_s,A,B,v_hadd);
     v(:,2) = L2(v(:,1),v(:,1),A,B,G,v_hadd);
-    v(:,3) = L3(v(:,1),v(:,1),v(:,1),A,B,G,v_hadd);    
+    %v(:,3) = L3(v(:,1),v(:,1),v(:,1),A,B,G,v_hadd);    
 end
 
 function [v1_] = L1(y1,A,B,v_hadd)
@@ -27,6 +27,6 @@ function [v3_] = L3(y1,y2,y3,A,B,G,v_hadd)
     P = v_hadd*diag((A'*A)*diag(y1)*G*diag(y1)*(B*B')); %first term
     Q = diag(v_hadd*diag((A'*A)*diag(y1)*G*diag(y2)*(B*B')));
     W = diag(v_hadd*diag((A'*A)*diag(y2)*G*diag(y1)*(B*B')));
-    v3_ = -(P_ + Q_ + W);
+    v3_ = -(P + Q + W);
 end
     
