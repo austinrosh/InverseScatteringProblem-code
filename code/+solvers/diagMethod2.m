@@ -42,20 +42,14 @@ arg6 = A*v1_d*G*v1_d*G*v1_d*G*v1_d*G*v1_d*G*v1_d*B;
 % N = 6 in this code   
 %2nd order
 v2 = L2(arg1,arg1,FWD);
-
 %3rd order
 v3 = L3(arg1,arg2,arg3,FWD);
-%v3_d = diag(v3);
 %4th order
-
 v4 = L4(arg1,arg2,arg3,arg4,FWD);
-
- %5th order
+%5th order
 v5 = L5(arg1,arg2,arg3,arg4,arg5,FWD);
-
 % %6th order
-% v6 = L6(nu1,nu2,nu3,nu4,nu5,arg6,FWD);
-
+v6 = L6(nu1,nu2,nu3,nu4,nu5,arg6,FWD);
 v_ISP = [v1 v2 v3 v4 v5 v6];
 %% Recovery
 v_firstOrder = v1;
