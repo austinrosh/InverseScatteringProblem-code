@@ -9,12 +9,15 @@ close all
 addpath(genpath("/Users/austinrothschild/Desktop/Research/Levinson Research/Inverse Scattering/ISP-repo/InverseScatteringProblem-code/code"));
 load forwardProblem.mat
 %% Diag Method
-% flag = 0; %change to 1 to show plots in diagMethod() function
-% [v1, v2, v3] = solvers.diagMethod('forwardProblem',flag);
+filename = 'forwardProblem';
+load([filename,'.mat']) 
+A = FWD.U_i; %incident fields
+B = FWD.U_d; %detector fields
+U_s = FWD.U_s; %measured scattered field
+G = FWD.G; %scattering interaction matrix
+v_hadd = pinv(((A'*A).*(B*B').')); %diag method operator
+v_original = FWD.V_vec; %original material
+flag = 0; %change to 1 to show plots in diagMethod() function
+[v] = solvers.diagMethod2(A,B,U_s,G,v_hadd,v_original,flag);
 
- filename = 'forwardProblem';
-% flag = 1;
-% [v1,v2,v3,v4] = solvers.diagMethod(filename, flag);
-
-numTerms=2;
-[v] = solvers.nTerms_ISP(filename, numTerms)
+%[v1,v2,v3,v4] = solvers.diagMethod(filename, flag);
