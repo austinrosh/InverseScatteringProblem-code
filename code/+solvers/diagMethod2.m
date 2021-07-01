@@ -37,12 +37,6 @@ arg4 = A*v1_d*G*v1_d*G*v1_d*G*v1_d*B;
 arg5 = A*v1_d*G*v1_d*G*v1_d*G*v1_d*G*v1_d*B;
 arg6 = A*v1_d*G*v1_d*G*v1_d*G*v1_d*G*v1_d*G*v1_d*B;
 
-nu1 = diag(v_hadd*diag(A'*(arg1)*B'));
-nu2 = diag(v_hadd*diag(A'*(arg2)*B'));
-nu3 = diag(v_hadd*diag(A'*(arg3)*B'));
-nu4 = diag(v_hadd*diag(A'*(arg4)*B'));
-nu5 = diag(v_hadd*diag(A'*(arg5)*B')); 
-nu6 = diag(v_hadd*diag(A'*(arg6)*B'));
 
 %% ISP Terms 2...N
 % N = 6 in this code   
